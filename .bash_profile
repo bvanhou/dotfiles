@@ -22,6 +22,10 @@ alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
 alias gemlist='gem list | egrep -v "^( |$)"'
 alias top='top -ocpu'
 
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
 # Bundler Aliases
 alias bi='echo Running: bundle install... ; bundle install ;'
 alias brb='echo Running: bundle exec rake build... ; bundle exec rake build ;'

@@ -4,7 +4,7 @@ git pull origin master
 function doIt() {
   # EXCLUDING .bash_profile
 	rsync --exclude ".bash_profile" --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
+		--exclude "README.md" --exclude "LICENSE-MIT.txt"  --exclude "sublime/" -av --no-perms . ~
 	source ~/.bash_profile
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

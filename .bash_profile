@@ -43,6 +43,8 @@ alias gp?='git log --pretty=oneline origin/master..HEAD'
 alias gs='git status'
 alias gpom='git pull origin master'
 
+# HomeBrew Aliases
+alias bu='brew update && brew upgrade `brew outdated`'
 
 # Functions
 # Apply SSH

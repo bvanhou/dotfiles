@@ -154,8 +154,15 @@ shopt -s histappend
 set +o histexpand # enable strings with !
 
 
-# ENV variables
-export PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# Build PATH
+PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin
+if [ -d "/opt/subversion" ]; then
+  PATH=/opt/subversion/bin:$PATH
+fi
+
+
+# Export ENV variables
+export PATH
 export HISTSIZE=100000
 export HISTFILESIZE=409600
 export HISTIGNORE="cd:ls:[bf]g:clear:exit:gp:gs:ll"

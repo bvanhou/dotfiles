@@ -46,6 +46,10 @@ alias gpom='git pull origin master'
 # HomeBrew Aliases
 alias bu='brew update && brew upgrade `brew outdated`'
 
+# Gem Aliases
+alias gu='gem update --system; gem update;'
+
+
 # Functions
 # Apply SSH
 function apply_ssh() {

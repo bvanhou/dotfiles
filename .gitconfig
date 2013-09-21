@@ -27,3 +27,5 @@
 	tool = kdiff3
 [push]
 	default = simple
+[grep]
+	lineNumber = true

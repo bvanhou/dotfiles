@@ -3,11 +3,15 @@ alias redo='sudo \!-1'
 alias rmlog="sudo rm /var/log/asl/*" #clear out old log files
 
 alias ..="cd .."
-alias ...="cd .. ; cd .. ;"
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 alias ls="ls -G" # list
 alias la="ls -Ga" # list all, includes dot files
 alias ll="ls -Gl" # long list, excludes dot files
 alias lla="ls -Gla" # long list all, includes dot files
+
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date' # Stopwatch
 
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="sudo osascript -e 'set volume 10'"
@@ -43,11 +47,23 @@ alias gp?='git log --pretty=oneline origin/master..HEAD'
 alias gs='git status'
 alias gpom='git pull origin master'
 
+# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade `brew outdated`; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
+
 # HomeBrew Aliases
 alias bu='brew update && brew upgrade `brew outdated`'
 
 # Gem Aliases
 alias gu='gem update --system; gem update;'
+
+# Canonical hex dump; some systems have this symlinked
+command -v hd > /dev/null || alias hd="hexdump -C"
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+# OS X has no `sha1sum`, so use `shasum` as a fallback
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 
 # Functions

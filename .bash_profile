@@ -48,7 +48,7 @@ alias gs='git status'
 alias gpom='git pull origin master'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade `brew outdated`; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade `brew outdated`; brew cleanup; npm update npm -g; sudo npm update -g; gem update --system; gem update;'
 
 # HomeBrew Aliases
 alias bu='brew update && brew upgrade `brew outdated`'

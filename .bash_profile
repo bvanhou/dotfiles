@@ -46,6 +46,8 @@ alias gdc='git diff --cached | subl'
 alias gp?='git log --pretty=oneline origin/master..HEAD'
 alias gs='git status'
 alias gpom='git pull origin master'
+alias gf='git fetch origin -v'
+alias gfu='git fetch upstream -v'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade `brew outdated`; brew cleanup; npm update npm -g; sudo npm update -g; gem update --system; gem update;'

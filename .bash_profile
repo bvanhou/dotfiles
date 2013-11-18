@@ -2,16 +2,26 @@
 alias redo='sudo \!-1'
 alias rmlog="sudo rm /var/log/asl/*" #clear out old log files
 
+# Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+# Better file listing
 alias ls="ls -G" # list
 alias la="ls -Ga" # list all, includes dot files
 alias ll="ls -Gl" # long list, excludes dot files
 alias lla="ls -Gla" # long list all, includes dot files
 
+# Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date' # Stopwatch
+
+# Gzip-enabled `curl`
+alias gurl='curl --compressed'
+
+# Get week number
+alias week='date +%V'
 
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="sudo osascript -e 'set volume 10'"
@@ -50,13 +60,19 @@ alias gf='git fetch origin -v'
 alias gfu='git fetch upstream -v'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade `brew outdated`; brew cleanup; npm update npm -g; sudo npm update -g; gem update --system; gem update;'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade `brew outdated`; brew cleanup; npm update npm -g; sudo npm update -g; sudo gem update --system; sudo gem update;'
 
 # HomeBrew Aliases
 alias bu='brew update && brew upgrade `brew outdated`'
 
 # Gem Aliases
 alias gu='gem update --system; gem update;'
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Make Grunt print stack traces by default
+command -v grunt > /dev/null && alias grunt="grunt --stack"
 
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
@@ -69,9 +85,71 @@ command -v sha1sum > /dev/null || alias sha1sum="shasum"
 
 
 # Functions
+# Simple calculator
+function calc() {
+  local result=""
+  result="$(printf "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')"
+  #                       └─ default (when `--mathlib` is used) is 20
+  #
+  if [[ "$result" == *.* ]]; then
+    # improve the output for decimal numbers
+    printf "$result" |
+    sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
+        -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+        -e 's/0*$//;s/\.$//'   # remove trailing zeros
+  else
+    printf "$result"
+  fi
+  printf "\n"
+}
+
 # Apply SSH
 function apply_ssh() {
   ssh $1 "cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_rsa.pub
+}
+
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+function tre() {
+  tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX
+}
+
+# Install Grunt plugins and add them as `devDependencies` to `package.json`
+# Usage: `gi contrib-watch contrib-uglify zopfli`
+function gi() {
+  local IFS=,
+  eval npm install --save-dev grunt-{"$*"}
+}
+
+# `s` with no arguments opens the current directory in Sublime Text, otherwise
+# opens the given location
+function s() {
+  if [ $# -eq 0 ]; then
+    subl .
+  else
+    subl "$@"
+  fi
+}
+
+# `o` with no arguments opens current directory, otherwise opens the given
+# location
+function o() {
+  if [ $# -eq 0 ]; then
+    open .
+  else
+    open "$@"
+  fi
+}
+
+# Create a git.io short URL
+function gitio() {
+  if [ -z "${1}" -o -z "${2}" ]; then
+    echo "Usage: \`gitio slug url\`"
+    return 1
+  fi
+  curl -i http://git.io/ -F "url=${2}" -F "code=${1}"
 }
 
 # Preview man page
@@ -147,6 +225,49 @@ function dataurl() {
   echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
 }
 
+# Escape UTF-8 characters into their 3-byte format
+function escape() {
+  printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
+  # print a newline unless we’re piping the output to another program
+  if [ -t 1 ]; then
+    echo # newline
+  fi
+}
+
+# Show all the names (CNs and SANs) listed in the SSL certificate
+# for a given domain
+function getcertnames() {
+  if [ -z "${1}" ]; then
+    echo "ERROR: No domain specified."
+    return 1
+  fi
+
+  local domain="${1}"
+  echo "Testing ${domain}…"
+  echo # newline
+
+  local tmp=$(echo -e "GET / HTTP/1.0\nEOT" \
+    | openssl s_client -connect "${domain}:443" 2>&1);
+
+  if [[ "${tmp}" = *"-----BEGIN CERTIFICATE-----"* ]]; then
+    local certText=$(echo "${tmp}" \
+      | openssl x509 -text -certopt "no_header, no_serial, no_version, \
+      no_signame, no_validity, no_issuer, no_pubkey, no_sigdump, no_aux");
+      echo "Common Name:"
+      echo # newline
+      echo "${certText}" | grep "Subject:" | sed -e "s/^.*CN=//";
+      echo # newline
+      echo "Subject Alternative Name(s):"
+      echo # newline
+      echo "${certText}" | grep -A 1 "Subject Alternative Name:" \
+        | sed -e "2s/DNS://g" -e "s/ //g" | tr "," "\n" | tail -n +2
+      return 0
+  else
+    echo "ERROR: Certificate not found.";
+    return 1
+  fi
+}
+
 # Determine size of a file or total size of a directory
 function fs() {
   if du -b /dev/null > /dev/null 2>&1; then
@@ -177,11 +298,10 @@ set +o histexpand # enable strings with !
 
 
 # Build PATH
-PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin
 if [ -d "/opt/subversion" ]; then
   PATH=/opt/subversion/bin:$PATH
 fi
-
 
 # Export ENV variables
 export PATH
@@ -202,7 +322,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Support brew bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-	. $(brew --prefix)/etc/bash_completion
+  . $(brew --prefix)/etc/bash_completion
 fi
 
 # Support NPM bash completion

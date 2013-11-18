@@ -303,6 +303,9 @@ if [ -d "/opt/subversion" ]; then
   PATH=/opt/subversion/bin:$PATH
 fi
 
+# Update PATH. Use rbenv to dynamically select which Ruby to use.
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Export ENV variables
 export PATH
 export HISTSIZE=100000
@@ -315,10 +318,6 @@ export PAGER="less"
 export CLICOLOR="yes"
 export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
 export PROMPT_COLOR='1;1;40m';
-
-
-# Update PATH. Use rbenv to dynamically select which Ruby to use.
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Support brew bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then

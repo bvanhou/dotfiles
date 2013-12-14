@@ -34,6 +34,7 @@ alias ping="ping -c 5" # ping 5 times ‘by default’
 alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
 
 alias gemlist='gem list | egrep -v "^( |$)"'
+alias npmlist='npm -g ls --depth=0'
 alias top='top -ocpu'
 
 # Kill all the tabs in Chrome to free up memory

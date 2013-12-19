@@ -69,6 +69,9 @@ alias bu='brew update && brew upgrade `brew outdated`'
 # Gem Aliases
 alias gu='gem update --system; gem update;'
 
+# NPM Aliases
+alias nu='npm update npm -g; sudo npm update -g; sudo gem update --system; sudo gem update;'
+
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 

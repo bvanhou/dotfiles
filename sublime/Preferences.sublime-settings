@@ -34,21 +34,21 @@
 	"save_on_focus_lost": true,
 	"shift_tab_unindent": true,
 	"tab_size": 2,
+	"todo":
+	{
+	  "folder_exclude_patterns": [
+	 		"dist", "vendor", "tmp", "node_modules"
+	  ],
+	  "patterns":
+	  {
+	    "TODO": "TODO[\\s]*?:+(?P<TODO>.*)$",
+	    "FIXME": "FIXME[\\s]*?:+(?P<FIXME>.*)$"
+	  },
+	  "case_sensitive": true,
+	  "result_title": "TODO Results"
+	},
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": false,
 	"wrap_width": 120,
-	 "todo":
-	 {
-	    "folder_exclude_patterns": [
-	   		"dist", "vendor", "tmp", "node_modules"
-	    ],
-	    "patterns":
-	    {
-	        "TODO": "TODO[\\s]*?:+(?P<TODO>.*)$",
-	        "FIXME": "FIXME[\\s]*?:+(?P<FIXME>.*)$"
-	    },
-	    "case_sensitive": true,
-	    "result_title": "TODO Results"
-	}
 }

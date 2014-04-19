@@ -95,21 +95,20 @@
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
 
-[difftool "kdiff3"]
-	path = /usr/local/bin/kdiff3
-	trustExitCode = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
 [diff]
-	tool = kdiff3
+	tool = Kaleidoscope
 
-[mergetool "kdiff3"]
-	path = /usr/local/bin/kdiff3
-	trustExitCode = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
 [mergetool]
-	keepBackup = false
+	prompt = false
 [merge]
-	tool = kdiff3
+	tool = Kaleidoscope
 
 [push]
 	default = matching

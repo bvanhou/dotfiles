@@ -1,3 +1,6 @@
+/**
+	/Users/alex/Library/Application Support/Sublime Text 2/Packages/User
+*/
 {
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
@@ -37,7 +40,7 @@
 	"todo":
 	{
 	  "folder_exclude_patterns": [
-	 		"dist", "vendor", "tmp", "node_modules"
+  		"dist", "vendor", "tmp", "node_modules"
 	  ],
 	  "patterns":
 	  {

@@ -47,7 +47,7 @@ alias bu='brew update && brew upgrade `brew outdated`'
 alias gu='gem update --system; gem update;'
 
 # NPM Aliases
-alias nu='npm update npm -g; sudo npm update -g;'
+alias nu='npm update npm -g; npm update -g;'
 
 # Misc
 alias gzip="gzip -9n" # set strongest compression level as ‘default’ for gzip

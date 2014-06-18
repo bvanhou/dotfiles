@@ -1,5 +1,5 @@
 /**
-	/Users/alex/Library/Application Support/Sublime Text 2/Packages/User
+  /Users/alex/Library/Application Support/Sublime Text 2/Packages/User
 */
 {
 	"auto_complete_commit_on_tab": true,
@@ -41,16 +41,20 @@
 	"tab_size": 2,
 	"todo":
 	{
-	  "folder_exclude_patterns": [
-  		"dist", "vendor", "tmp", "node_modules"
-	  ],
-	  "patterns":
-	  {
-	    "TODO": "TODO[\\s]*?:+(?P<TODO>.*)$",
-	    "FIXME": "FIXME[\\s]*?:+(?P<FIXME>.*)$"
-	  },
-	  "case_sensitive": true,
-	  "result_title": "TODO Results"
+		"case_sensitive": true,
+		"folder_exclude_patterns":
+		[
+			"dist",
+			"vendor",
+			"tmp",
+			"node_modules"
+		],
+		"patterns":
+		{
+			"FIXME": "FIXME[\\s]*?:+(?P<FIXME>.*)$",
+			"TODO": "TODO[\\s]*?:+(?P<TODO>.*)$"
+		},
+		"result_title": "TODO Results"
 	},
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,

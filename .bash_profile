@@ -1,5 +1,5 @@
 # Build PATH
-PATH=/usr/local/heroku/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=/usr/local/heroku/bin:/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin
 if [ -d "/opt/subversion" ]; then
   PATH=/opt/subversion/bin:$PATH
 fi

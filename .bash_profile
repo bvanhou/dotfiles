@@ -7,11 +7,6 @@ fi
 # Update PATH. Use rbenv to dynamically select which Ruby to use.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# Support brew bash completion
-# if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#   . $(brew --prefix)/etc/bash_completion
-# fi
-
 # Export ENV variables
 export PATH
 

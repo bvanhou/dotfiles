@@ -1,9 +1,3 @@
-# Better file listing
-alias ls="ls -G" # list
-alias la="ls -Ga" # list all, includes dot files
-alias ll="ls -Gl" # long list, excludes dot files
-alias lla="ls -Gla" # long list all, includes dot files
-
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."

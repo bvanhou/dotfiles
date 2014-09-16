@@ -7,7 +7,7 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
+alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
@@ -16,6 +16,7 @@ alias h="history"
 alias j="jobs"
 
 # Bundler Aliases
+alias be='bundle exec '
 alias bi='echo Running: bundle install... ; bundle install ;'
 alias brb='echo Running: bundle exec rake build... ; bundle exec rake build ;'
 alias brc='echo Running: bundle exec rake clean... ; bundle exec rake clean ;'

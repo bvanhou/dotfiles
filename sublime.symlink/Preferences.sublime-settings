@@ -1,5 +1,8 @@
 /**
   /Users/alex/Library/Application Support/Sublime Text 2/Packages/User
+
+  ln -s ~/Repos/dotfiles/sublime.symlink/Preferences.sublime-settings  ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
+  ln -s ~/Repos/dotfiles/sublime.symlink/snippets/  ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/snippets
 */
 {
 	"auto_complete_commit_on_tab": true,

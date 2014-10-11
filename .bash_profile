@@ -4,6 +4,9 @@ if [ -d "/opt/subversion" ]; then
   PATH=/opt/subversion/bin:$PATH
 fi
 
+# Update PATH. Add coreutils.
+PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
 # Update PATH. Use rbenv to dynamically select which Ruby to use.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 

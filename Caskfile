@@ -14,6 +14,7 @@ cask install filezilla 2> /dev/null
 cask install firefox 2> /dev/null
 cask install firefox-aurora 2> /dev/null
 cask install firefox-nightly 2> /dev/null
+cask install flux 2> /dev/null
 cask install gitx-l 2> /dev/null
 cask install google-chrome 2> /dev/null
 cask install google-chrome-canary 2> /dev/null

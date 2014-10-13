@@ -25,6 +25,7 @@ cask install kaleidoscope 2> /dev/null
 cask install mamp 2> /dev/null
 cask install miro-video-converter 2> /dev/null
 cask install mou 2> /dev/null
+cask install ntfsmounter 2> /dev/null
 cask install onepassword 2> /dev/null
 cask install openemu 2> /dev/null
 cask install opera 2> /dev/null

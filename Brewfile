@@ -76,6 +76,18 @@ install tree
 install webkit2png
 install zopfli
 
+# Install Alex's other binaries
+install cowsay
+install casperjs
+install git-flow
+install ngrok
+install phantomjs
+install python
+install rbenv
+install ruby-build
+install webp
+install yuicompressor
+
 install homebrew/versions/lua52
 
 # Remove outdated versions from the cellar

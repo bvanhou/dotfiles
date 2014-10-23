@@ -54,6 +54,7 @@ alias redo='sudo \!-1'
 alias rmlog="sudo rm /var/log/asl/*" #clear out old log files
 alias gemlist='gem list | egrep -v "^( |$)"'
 alias npmlist='npm -g ls --depth=0'
+alias npmold='npm -g outdated --depth=0'
 alias top='top -ocpu'
 alias vtop='vtop --theme wizard'
 
@@ -87,7 +88,7 @@ alias week='date +%V'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade `brew outdated`; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade `brew outdated`; brew cleanup; npm install npm -g; npm update -g; gem update --system; gem update'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

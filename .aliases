@@ -25,6 +25,7 @@ alias bg='echo Running: bundle exec guard... ; bundle exec guard ;'
 # Git Aliases
 alias gb='git branch'
 alias gba='git branch -a'
+alias gbav='git branch -avv'
 alias gcav='git commit -av'
 alias gca='git commit -a'
 alias gd='git diff | subl'

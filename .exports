@@ -1,4 +1,4 @@
-# Make subl the default editor
+# Make Sublime Text the default editor
 export EDITOR="subl -w"
 export VISUAL="subl -w"
 

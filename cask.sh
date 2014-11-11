@@ -14,7 +14,7 @@ apps=(
   dropbox
   filezilla
   firefox
-  firefox-aurora
+  firefoxdeveloperedition
   firefox-nightly
   flux
   gitx-l
@@ -32,7 +32,7 @@ apps=(
   openemu
   opera
   opera-developer
-  opera-next
+  opera-beta
   qlcolorcode
   qlmarkdown
   qlprettypatch

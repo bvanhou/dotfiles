@@ -90,16 +90,16 @@ brew install zopfli
 brew install node
 
 # Install Alex's other binaries
-install cowsay
-install casperjs
-install git-flow
-install ngrok
-install phantomjs
-install python
-install rbenv
-install ruby-build
-install webp
-install yuicompressor
+brew install cowsay
+brew install casperjs
+brew install git-flow
+brew install ngrok
+brew install phantomjs
+brew install python
+brew install rbenv
+brew install ruby-build
+brew install webp
+brew install yuicompressor
 
 brew install homebrew/versions/lua52
 

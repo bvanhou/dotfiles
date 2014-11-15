@@ -1,0 +1,20 @@
+Sublime Text 2 Packages
+-----------------------
+
+gitgutter
+advancednewfile
+apacheconf.tmlanguage
+autoprefixer
+dotfiles syntax highlighting
+editorconfig
+emmet
+handlebars
+sublimelinter
+sublimetodo
+trailingspaces
+togglequotes
+scss
+coffeescript
+alignment
+sidebarenhancements
+livestyle

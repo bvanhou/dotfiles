@@ -7,6 +7,7 @@ set -e
 # Apps
 apps=(
   atom
+  boxer
   caffeine
   charles
   colloquy

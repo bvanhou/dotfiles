@@ -34,6 +34,7 @@ apps=(
   opera
   opera-developer
   opera-beta
+  qbittorrent
   qlcolorcode
   qlmarkdown
   qlprettypatch

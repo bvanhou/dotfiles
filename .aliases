@@ -46,6 +46,7 @@ alias gu='gem update --system; gem update;'
 
 # NPM Aliases
 alias nu='npm update npm -g; npm update -g;'
+alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 
 # Misc
 alias gzip="gzip -9n" # set strongest compression level as ‘default’ for gzip

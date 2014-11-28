@@ -18,3 +18,6 @@ coffeescript
 alignment
 sidebarenhancements
 livestyle
+css3 syntax
+javascript next syntax
+color highlighter

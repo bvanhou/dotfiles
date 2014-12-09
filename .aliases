@@ -43,9 +43,13 @@ alias bu='brew update && brew upgrade `brew outdated`'
 
 # Gem Aliases
 alias gu='gem update --system; gem update;'
+alias gemlist='gem list | egrep -v "^( |$)"'
+alias gemcleanup='gem cleanup;'
 
 # NPM Aliases
 alias nu='npm update npm -g; npm update -g;'
+alias npmlist='npm -g ls --depth=0'
+alias npmold='npm -g outdated --depth=0'
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 
 # Misc
@@ -54,9 +58,6 @@ alias ping="ping -c 5" # ping 5 times ‘by default’
 alias ql="qlmanage -p 2>/dev/null" # preview a file using QuickLook
 alias redo='sudo \!-1'
 alias rmlog="sudo rm /var/log/asl/*" #clear out old log files
-alias gemlist='gem list | egrep -v "^( |$)"'
-alias npmlist='npm -g ls --depth=0'
-alias npmold='npm -g outdated --depth=0'
 alias top='top -ocpu'
 alias vtop='vtop --theme wizard'
 

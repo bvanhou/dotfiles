@@ -22,7 +22,7 @@
 	],
 	"folder_exclude_patterns":
 	[
-		".git"
+    ".git"
 	],
 	"font_size": 13,
 	"highlight_line": true,

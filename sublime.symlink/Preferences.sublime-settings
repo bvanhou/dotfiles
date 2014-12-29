@@ -22,8 +22,7 @@
 	],
 	"folder_exclude_patterns":
 	[
-		".git",
-		"node_modules"
+		".git"
 	],
 	"font_size": 13,
 	"highlight_line": true,
@@ -61,7 +60,7 @@
 	},
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-  "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
 	"word_wrap": true,
 	"wrap_width": 120
 }

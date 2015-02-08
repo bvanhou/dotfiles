@@ -1,15 +1,19 @@
 /**
   /Users/alex/Library/Application Support/Sublime Text 2/Packages/User
 
-  ln -s ~/Repos/dotfiles/sublime.symlink/Preferences.sublime-settings  ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
-  ln -s ~/Repos/dotfiles/sublime.symlink/snippets/  ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/snippets
+  cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings 2> /dev/null
+  cp -r init/snippets ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/ 2> /dev/null
 */
 {
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+  "default_encoding": "UTF-8",
 	"default_line_ending": "unix",
+  "detect_indentation": false,
+  "draw_white_space": "all",
 	"draw_minimap_border": true,
+  "ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
 		".DS_Store",
@@ -27,6 +31,7 @@
 	"font_size": 13,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
+  "hot_exit": false,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -34,12 +39,15 @@
 	"match_brackets": true,
 	"match_brackets_angle": true,
 	"open_files_in_new_window": false,
+  "remember_open_files": true,
 	"rulers":
 	[
 		120
 	],
 	"save_on_focus_lost": true,
 	"shift_tab_unindent": true,
+  "show_encoding": true,
+  "show_line_endings": true,
 	"tab_size": 2,
 	"todo":
 	{

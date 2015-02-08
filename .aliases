@@ -52,6 +52,7 @@ alias gemcleanup='gem cleanup;'
 alias nu='npm install -g npm@latest; npm update -g;'
 alias npmlist='npm -g ls --depth=0'
 alias npmold='npm -g outdated --depth=0'
+alias nom='npm cache clear && rm -rf node_modules && npm install'
 alias nombom='npm cache clear && bower cache clean && rm -rf node_modules bower_components && npm install && bower install'
 
 # Misc

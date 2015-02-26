@@ -98,6 +98,9 @@ brew install zopfli
 # installation method.
 brew install node
 
+# Install io.js
+brew install iojs
+
 # Install Alex's other binaries
 brew install cowsay
 brew install casperjs
@@ -109,8 +112,6 @@ brew install rbenv
 brew install ruby-build
 brew install webp
 brew install yuicompressor
-
-brew install homebrew/versions/lua52
 
 # Remove outdated versions from the cellar.
 brew cleanup

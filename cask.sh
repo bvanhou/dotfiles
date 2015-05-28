@@ -6,6 +6,7 @@ set -e
 
 # Apps
 apps=(
+  1password
   atom
   boxer
   caffeine
@@ -29,7 +30,6 @@ apps=(
   miro-video-converter
   mou
   ntfsmounter
-  onepassword
   openemu
   opera
   opera-developer

@@ -19,13 +19,13 @@ apps=(
   firefoxdeveloperedition
   firefox-nightly
   flux
-  gitx-l
   google-chrome
   google-chrome-canary
   hex-fiend
   imagealpha
   imageoptim
   kaleidoscope
+  laullon-gitx
   mamp
   miro-video-converter
   mou

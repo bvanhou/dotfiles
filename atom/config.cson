@@ -35,3 +35,6 @@
       "source.gfm"
       "text.git-commit"
     ]
+  ".slim.text":
+    whitespace:
+      removeTrailingWhitespace: false

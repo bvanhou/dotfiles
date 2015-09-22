@@ -1,0 +1,6 @@
+Atom Packages
+-----------------------
+
+linter-jscs
+minimapx
+pigments

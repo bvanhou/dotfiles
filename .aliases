@@ -39,6 +39,7 @@ alias gs='git status'
 alias gpom='git pull origin master'
 alias gf='git fetch origin -v'
 alias gfu='git fetch upstream -v'
+alias gco='git checkout'
 
 # HomeBrew Aliases
 alias bu='brew update; brew upgrade --all;'

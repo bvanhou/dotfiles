@@ -13,15 +13,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Export ENV variables
 export PATH
 
-# Account for the proxy.
-# proxyurl=`proxyurl.js`
-# if [ $proxyurl ]; then
-#   http_proxy="http://$NAOID:$NAOPASS@$proxyurl/"
-#   https_proxy="https://$NAOID:$NAOPASS@$proxyurl/"
-#   export http_proxy
-#   export https_proxy
-# fi
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.

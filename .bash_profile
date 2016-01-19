@@ -26,10 +26,6 @@
  # echo "export EDITOR='subl -w'" >> ~/.bash_profile
  # ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
- export HTTP_PROXY="http://bz4bbl:bvhibAccess3566@10.43.196.134:8080"
- export HTTPS_PROXY="https://bz4bbl:bvhibAccess3566@10.43.196.134:8080"
-
-
  #################################
  ### ALIASES AND CUSTOMIZATION ###
  #################################
